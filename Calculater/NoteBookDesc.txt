@@ -1,0 +1,8 @@
+This is the calculater project done by me and my Good friend Akshit.
+
+In this we have normal working of calculater 
+UI is the only technology that use in this.
+
+HTML, CSS, JS only
+
+Thankyou...
