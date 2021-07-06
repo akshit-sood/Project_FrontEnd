@@ -4,37 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
+    <style>
+     .listname{
+       background-color: red;
+       height: 20%;
+       display: flex;
+       width: 100%;
+       justify-content: space-between;
+     }
+      
+    </style>
 </head>
 <body>
 
     <input type="text" id="datas">
-    <button class="clickon">Click Add</button>
+    <button onclick="clickon()">Click Add</button>
   <h1>
       Show data
-      <div id="item">
-          
-      </div>
+      <div id="store">
+           <ul id=data>
+           </ul>
+          </div>
   </h1>  
 
 
 
  <script>
-    $(".clickon").click(function(){
-        var a = $("#datas").val();
-      if(a==""){
-          alert("Required Field");
-      }
-      else{
-        $("#item").append("<div class=data>"+a+"<button class='del'>Delete</button></div>");
-        $("#datas").val("");
-        $(".data").click(function(){
-        $(this).remove();
-    })
-      }
-    })
-   
+
+var datastore=localStorage.getItem("FullData");
+document.getElementById("store").innerHTML=datastore;
+
+
+function clickon(){
+  var data = document.getElementById("datas").value;
+  if(data==""){
+    alert("field required");
+  }
+  else{
+ var check = document.createElement("input");
+check.className="check";
+check.type="checkbox";
+  var li = document.createElement("li");
+  li.className="listname"
+  var result = document.createTextNode(data);
+li.appendChild(check);
+  li.appendChild(result);
+  
+document.getElementById("data").appendChild(li);
+document.getElementById("datas").value="";
+var span = document.createElement("button");
+  var txt = document.createTextNode("");
+  span.className = "delete";
+  span.appendChild(txt);
+  var i = document.createElement("i");
+  i.className="fa fa-trash-o";
+  span.appendChild(i);
+  li.appendChild(span);
+  var close = document.getElementsByClassName("delete");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.remove();
+var s = document.getElementById("store").innerHTML;
+localStorage.setItem("FullData",s);
+  }
+}
+var s = document.getElementById("store").innerHTML;
+localStorage.setItem("FullData",s);
+
+
+
+}
+}
+var close = document.getElementsByClassName("delete");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.remove();
+var s = document.getElementById("store").innerHTML;
+localStorage.setItem("FullData",s);
+  }
+}
+var s = document.getElementById("store").innerHTML;
+localStorage.setItem("FullData",s);
+
  </script>
 </body>
 </html>
