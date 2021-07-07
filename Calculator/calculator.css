@@ -32,8 +32,10 @@
       font-size: 30px;
 }
 .cal-pannel-keyboard-operations{
-    width: 40%;
+    width: 20%;
     background-color: yellowgreen;
+    display: grid;
+    grid-template-columns: auto;
 }
 
 
