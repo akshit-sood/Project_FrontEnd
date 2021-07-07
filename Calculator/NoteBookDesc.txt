@@ -5,3 +5,4 @@ In this we have done normal working of calculater with showing history dynamical
 HTML, CSS, JS only
 
 Thankyou...
+thank you bro for awesome code
