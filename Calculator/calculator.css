@@ -1,7 +1,45 @@
 .calculater{
     background-color: red;
     height:70%;
-    width: 70%;
-    
+    width: 70%;   
 }
 
+.cal-screen{
+   height:30%;
+   background-color: orange;
+}
+.cal-pannel{
+    height:70%;
+    background-color: orangered;
+}
+.cal-pannel-keyboard{
+    height:100%;
+    width: auto;
+    background-color: orchid;
+    display: flex;
+}
+
+.cal-pannel-keyboard-pannel{
+    width: 60%;
+    background-color: black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 1%;
+}
+.cal-pannel-keyboard-pannel-buttons{
+      background-color: black;
+      color:white;
+      font-size: 30px;
+}
+.cal-pannel-keyboard-operations{
+    width: 40%;
+    background-color: yellowgreen;
+}
+
+
+.cal-pannel-history{
+    height: 100%;
+    width: 40%;
+    background-color: yellow;
+    display: none;
+}
